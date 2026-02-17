@@ -1,12 +1,46 @@
-// template
-const tintColorLight = "#2f95dc";
-
-export default {
+const Colors = {
   light: {
-    text: "#000",
-    background: "#fff",
-    tint: tintColorLight,
-    tabIconDefault: "#ccc",
-    tabIconSelected: tintColorLight,
+    text: "#1a1a2e",
+    textSecondary: "#6b7280",
+    background: "#f8f9ff",
+    surface: "#ffffff",
+    surfaceSecondary: "#f0f2ff",
+    primary: "#4f46e5",
+    primaryLight: "#818cf8",
+    accent: "#06b6d4",
+    accentLight: "#22d3ee",
+    tint: "#4f46e5",
+    tabIconDefault: "#9ca3af",
+    tabIconSelected: "#4f46e5",
+    border: "#e5e7eb",
+    success: "#10b981",
+    warning: "#f59e0b",
+    error: "#ef4444",
+    card: "rgba(255, 255, 255, 0.85)",
+    gradientStart: "#eef2ff",
+    gradientEnd: "#faf5ff",
+  },
+  dark: {
+    text: "#f1f5f9",
+    textSecondary: "#94a3b8",
+    background: "#0f172a",
+    surface: "#1e293b",
+    surfaceSecondary: "#1e1b4b",
+    primary: "#818cf8",
+    primaryLight: "#a5b4fc",
+    accent: "#22d3ee",
+    accentLight: "#67e8f9",
+    tint: "#818cf8",
+    tabIconDefault: "#64748b",
+    tabIconSelected: "#818cf8",
+    border: "#334155",
+    success: "#34d399",
+    warning: "#fbbf24",
+    error: "#f87171",
+    card: "rgba(30, 41, 59, 0.85)",
+    gradientStart: "#0f172a",
+    gradientEnd: "#1e1b4b",
   },
 };
+
+export default Colors;

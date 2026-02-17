@@ -68,3 +68,10 @@ task = "shell.exec"
 args = "npm run expo:dev"
 waitForPort = 8081
 ensurePreviewReachable = "/status"
+
+[userenv]
+
+[userenv.shared]
+SUPABASE_URL = "https://iqnxvsjmlikaqcpfyxjb.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlxbnh2c2ptbGlrYXFjcGZ5eGpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk1ODM4NDEsImV4cCI6MjA4NTE1OTg0MX0.Sn8vgJ5eXH0rjQNaa6CQKLlOn3fEktyJL_su5Rp14mE"
+GROQ_API_KEY = "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"
