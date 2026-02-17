@@ -1,0 +1,358 @@
+You are developing the complete frontend application for an AI-powered personalized learning platform named SkillPath.
+
+⚠️ IMPORTANT CONTEXT
+
+The backend is already fully developed.
+
+DO NOT recreate backend logic.
+DO NOT duplicate API logic.
+DO NOT modify backend structure.
+
+Only build the frontend.
+
+Connect all frontend components to the existing backend APIs.
+
+🎯 UPDATED PROJECT GOAL
+
+Develop a fully animated, modern, minimal, mobile-first frontend application that connects seamlessly with the existing backend.
+
+The UI must be:
+
+• Minimal and elegant
+• Modern SaaS design
+• Student-friendly
+• Soft gradient theme
+• Fully animated
+• Mobile-first and responsive
+• Hackathon demo ready
+• Include Light/Dark theme toggle
+
+The application should feel like a real startup product.
+
+🛠 FRONTEND TECHNOLOGY STACK
+
+Use:
+
+• React.js (Vite)
+• Tailwind CSS
+• Framer Motion (animations)
+• Recharts (charts)
+• Axios (API calls)
+• React Router (navigation)
+• Context API (auth + theme state management)
+
+🔗 BACKEND API ENDPOINTS
+
+Authentication:
+POST /api/signup
+POST /api/login
+
+Student Features:
+GET /api/roadmap/:student_id
+POST /api/concept
+POST /api/feedback
+POST /api/integrity
+POST /api/progress
+GET /api/analytics/:student_id
+
+Use real API calls.
+No mock data.
+
+👤 AUTHENTICATION MODES
+
+The system must support:
+
+1️⃣ Login
+
+Uses:
+POST /api/login
+
+Store:
+token
+student_id
+
+Save in localStorage.
+
+Protect dashboard routes.
+
+2️⃣ Signup
+
+Uses:
+POST /api/signup
+
+Store token + student_id
+Redirect to dashboard.
+
+3️⃣ Guest User Mode (NEW REQUIREMENT)
+
+Because the backend database currently does not allow inserting new user records:
+
+• Add a “Continue as Guest” button on the Login page.
+• Guest mode must NOT create any database record.
+• Do NOT call /api/signup for guest.
+• Do NOT store guest in DB.
+
+Guest user behavior:
+
+• Generate a temporary guest_id (UUID on frontend).
+• Store it in localStorage.
+• Allow access to all dashboard pages.
+• For API calls requiring student_id:
+- Send guest_id as student_id.
+- Backend may return analysis-only data.
+• If backend rejects student_id:
+- Gracefully fallback to frontend temporary state.
+
+Guest users should be able to:
+
+• Enter curriculum details manually.
+• Upload learning preferences.
+• Generate roadmap.
+• Use concept coach.
+• Use feedback analysis.
+• Track temporary progress (stored in localStorage only).
+
+Guest progress must persist only in browser storage.
+
+📚 CURRICULUM ANALYSIS FLOW (NEW REQUIREMENT)
+
+In Guest Mode:
+
+Create a Curriculum Analysis onboarding step:
+
+Step 1:
+Ask:
+• Education level
+• Current subjects
+• Strength areas
+• Weak areas
+• Goal (exam / placement / skill)
+
+Step 2:
+Send data to:
+POST /api/concept or relevant analysis endpoint
+
+Step 3:
+Generate:
+
+• Personalized 4-week roadmap
+• Strength/weakness summary
+• Confidence score
+• Suggested learning path
+
+Display this beautifully with animations.
+
+This should feel like an AI analyzing the student in real time.
+
+🎨 DESIGN REQUIREMENTS (UPDATED)
+
+Overall Theme:
+
+• Minimal UI
+• Soft blue + purple gradient background
+• Clean whitespace
+• Subtle glassmorphism cards
+• No clutter
+• Soft shadows
+• Floating animated gradient blobs
+• Smooth transitions
+• Professional typography
+
+🌗 DARK MODE TOGGLE (NEW REQUIREMENT)
+
+Add theme toggle switch in navbar:
+
+• Light mode (default)
+• Dark mode
+
+Use Tailwind dark mode strategy.
+
+Dark theme:
+
+• Deep navy/black background
+• Subtle purple glow
+• Soft neon highlights
+• Accessible contrast
+
+Theme must persist in localStorage.
+
+Animate theme transition smoothly.
+
+🏠 LANDING PAGE
+
+Header:
+Logo: SkillPath
+Navbar:
+About | Features | Contact | Login
+
+Hero Section:
+Title:
+AI-Powered Personalized Learning Assistant
+
+Subtext explaining adaptive personalized learning.
+
+Buttons:
+Get Started → Login
+Continue as Guest
+
+Animated background shapes.
+
+Feature cards with hover animation:
+
+• Personalized Roadmap
+• Concept Coach
+• Mastery Tracking
+• AI Feedback & Integrity
+
+Minimal but impressive.
+
+🔐 LOGIN PAGE
+
+Minimal centered card.
+
+Fields:
+Email
+Password
+
+Buttons:
+Login
+Continue as Guest
+
+Link:
+Signup
+
+Animated transitions.
+
+📝 SIGNUP PAGE
+
+Fields:
+Name
+Education
+Email
+Password
+
+Signup button.
+
+📊 DASHBOARD
+
+Fetch:
+GET /api/analytics/:student_id
+
+Display:
+
+• Welcome message
+• Circular readiness score
+• Confidence meter
+• Mastery progress bars
+• Upcoming revisions
+
+Animate charts on load using Recharts + Framer Motion.
+
+🗺 ROADMAP PAGE
+
+Fetch:
+GET /api/roadmap/:student_id
+
+Display:
+
+• 4-week animated vertical timeline
+• Expandable weekly cards
+• Completion checkmarks
+• Smooth accordion animations
+
+🧠 CONCEPT COACH
+
+Call:
+POST /api/concept
+
+Inputs:
+Topic
+Level dropdown
+Language dropdown
+
+Display:
+
+• Step-by-step explanation
+• Analogy section
+• Hint question
+• Mastery question
+
+Chat-style animated UI.
+
+📝 FEEDBACK PAGE
+
+Call:
+POST /api/feedback
+
+Display:
+
+• Criteria score bars
+• Strengths
+• Improvements
+• Overall badge
+
+Then call:
+POST /api/integrity
+
+Display:
+
+• Originality risk meter
+• Citation suggestions
+
+📈 PROGRESS PAGE
+
+Call:
+POST /api/progress
+
+Inputs:
+Topic
+Status
+Mastery slider
+
+Show:
+
+• Confirmation animation
+• Updated confidence score
+• Next revision date
+
+🎬 ANIMATION REQUIREMENTS
+
+Use Framer Motion for:
+
+• Page transitions
+• Card hover lift
+• Button glow
+• Floating blobs
+• Chart entry animation
+• Sidebar collapse animation
+• Bottom navigation animation
+
+The mobile experience must feel like a native app.
+
+📱 RESPONSIVENESS
+
+Mobile-first design.
+
+Mobile:
+• Bottom navigation
+• Large touch buttons
+• Smooth transitions
+
+Desktop:
+• Collapsible sidebar
+
+Fully responsive layout.
+
+📂 PROJECT STRUCTURE
+
+/src
+/components
+/pages
+/context
+/services
+/hooks
+/layouts
+
+Keep API logic inside services folder only.
+
+No duplication.
